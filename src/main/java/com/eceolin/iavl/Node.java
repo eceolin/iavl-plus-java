@@ -1,10 +1,16 @@
 package com.eceolin.iavl;
 
-public abstract class Node {
-    private String key;
-    private String hash;
-    private Chunk chunk;
-    private Integer height;
+public class Node {
+    String key;
+    String hash;
+    Chunk chunk;
+    Integer height;
+    String value;
+    Node inner;
+    Node left;
+    Node right;
 
-    abstract boolean isLeaf();
+    public boolean isLeaf() {
+        return left == null && right == null;
+    }
 }
